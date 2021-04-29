@@ -5,10 +5,12 @@ import Logger from "js-logger";
 import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
 import { ToastContainer } from "react-toastify";
+import { registerIntercepts } from "apis/axios";
 
 const App = () => {
   useEffect(() => {
     initializeLogger();
+    registerIntercepts();
     Logger.info("Log from js-logger");
   }, []);
 
@@ -17,7 +19,7 @@ const App = () => {
       <ToastContainer />
       <NavBar />
       <Switch>
-        <Route exact path="/" render={Dashboard} />
+        <Route exact path="/" component={Dashboard} />
         <Route exact path="/about" render={() => <div>About new things</div>} />
       </Switch>
     </Router>

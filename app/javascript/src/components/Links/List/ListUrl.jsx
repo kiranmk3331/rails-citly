@@ -11,12 +11,12 @@ const ListUrl = ({ data, handleClicked }) => {
             leading-5 text-bb-gray max-w-xs"
           >
             <a
-              href={rowData.original_url}
+              href={rowData.long_url}
               target="_blank"
               className="hover:underline cursor-pointer"
               rel="noreferrer"
             >
-              {rowData.original_url}
+              {rowData.long_url}
             </a>
           </td>
           <td
@@ -24,19 +24,19 @@ const ListUrl = ({ data, handleClicked }) => {
             leading-5 text-bb-gray max-w-xs"
           >
             <a
-              onClick={() => handleClicked(rowData.slug)}
+              onClick={() => handleClicked(rowData.id)}
               target="_blank"
               className="hover:underline cursor-pointer"
               rel="noreferrer"
             >
-              {rowData.shortened_url}
+              {rowData.short_url}
             </a>
           </td>
           <td
             className="px-6 py-4 text-md font-medium text-center
             leading-5 text-bb-gray whitespace-no-wrap bg-gray-100"
           >
-            {rowData.clicked}
+            {rowData.click}
           </td>
         </tr>
       ))}
