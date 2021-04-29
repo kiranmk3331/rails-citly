@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Logger from "js-logger";
 import NavBar from "./components/NavBar";
 import Dashboard from "./components/Dashboard";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   useEffect(() => {
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <Router>
+      <ToastContainer />
       <NavBar />
       <Switch>
         <Route exact path="/" render={Dashboard} />
