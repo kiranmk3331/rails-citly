@@ -2,7 +2,7 @@ import React from "react";
 import Button from "components/Button";
 import Input from "../Input";
 
-const CreateLink = ({ setLink, handleSubmit, loading, link, handleReport }) => {
+const CreateLink = ({ setUrl, handleSubmit, loading, url, handleReport }) => {
   return (
     <div>
       <div className="flex justify-between mx-auto mt-10 w-full">
@@ -10,8 +10,8 @@ const CreateLink = ({ setLink, handleSubmit, loading, link, handleReport }) => {
           <div className="w-full">
             <Input
               placeholder="Enter a Url to shorten..."
-              value={link}
-              onChange={e => setLink(e.target.value)}
+              value={url}
+              onChange={e => setUrl(e.target.value)}
             />
           </div>
           <div className=" flex justify-end">

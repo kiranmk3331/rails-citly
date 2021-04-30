@@ -10,7 +10,7 @@ const ListUrl = ({ data, handleClicked, handlePinned }) => {
             <i
               className={`ri-pushpin-2-fill align-middle cursor-pointer
               hover:text-blue-500 ${
-        rowData.pinned ? "text-blue-900" : "text-gray-500"
+        rowData.pinned ? "text-red-500" : "text-gray-500"
         } `}
               onClick={() => handlePinned(rowData.id)}
             ></i>

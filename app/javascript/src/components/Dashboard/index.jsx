@@ -80,8 +80,8 @@ const Dashboard = () => {
     <Container>
       <CreateLink
         handleSubmit={handleSubmit}
-        setLink={setUrl}
-        link={url}
+        setUrl={setUrl}
+        url={url}
         loading={loading}
         handleReport={handleReport}
       />
