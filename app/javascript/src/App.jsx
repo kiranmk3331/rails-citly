@@ -20,7 +20,6 @@ const App = () => {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route exact path="/about" render={() => <div>About new things</div>} />
       </Switch>
     </Router>
   );
