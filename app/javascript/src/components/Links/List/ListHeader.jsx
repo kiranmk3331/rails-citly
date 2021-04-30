@@ -2,7 +2,7 @@ import React from "react";
 
 const ListHeader = () => {
   return (
-    <thead className="bg-purple-700 text-white">
+    <thead className="bg-blue-700 text-white ">
       <tr>
         <th></th>
         <th

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CreateLink from "../Links/CreateLink";
-import ListLinks from "../Links/ListLink";
+import ListLinks from "../Links/ListLinks";
 import Container from "components/Container";
 import Logger from "js-logger";
 import PageLoader from "components/PageLoader";
@@ -55,6 +55,15 @@ const Dashboard = () => {
     }
   };
 
+  const handlePinned = async id => {
+    try {
+      await urlsApi.update(id);
+      fetchUrls();
+    } catch (error) {
+      Logger.error(error);
+    }
+  };
+
   useEffect(() => {
     fetchUrls();
   }, []);
@@ -67,7 +76,11 @@ const Dashboard = () => {
         link={url}
         loading={loading}
       />
-      <ListLinks data={urls} handleClicked={handleClick} />
+      <ListLinks
+        data={urls}
+        handleClicked={handleClick}
+        handlePinned={handlePinned}
+      />
     </Container>
   );
 };

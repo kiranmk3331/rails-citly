@@ -1,4 +1,6 @@
 class UrlsController < ApplicationController
+  before_action :load_url, only: [:update, :count]
+
   def index
     @urls = Url.all
     render status: :ok, json: { urls: @urls }
@@ -19,9 +21,24 @@ class UrlsController < ApplicationController
   end
 
   def count
-    url = Url.find_by(id: params[:id])
-    url.increment!(:click)
-    render status: :ok, json: { url: url }
+    @url.increment!(:click)
+    if @url.save
+      render status: :ok, json: { url: @url }
+    else
+      errors = @url.errors.full_messages
+      render status: :unprocessable_entity, json: { errors: errors }
+    end
+  end
+
+  def update
+    if @url.update_attribute(:pinned, !@url.pinned)
+      render status: :ok, json: {
+               message: t("successfully_updated"),
+             }
+    else
+      errors = @url.errors.full_messages
+      render status: :unprocessable_entity, json: { errors: errors }
+    end
   end
 
   private
@@ -30,9 +47,14 @@ class UrlsController < ApplicationController
     params.require(:url).permit(:long_url)
   end
 
+  def load_url
+    @url = Url.find(params[:id])
+  rescue ActiveRecord::RecordNotFound => errors
+    render json: { errors: errors }
+  end
+
   def generate_short_url
-    shortened_url = "#{request.base_url}#{rand(36 ** 8).to_s(36)}"
-    shortened_url
+    "#{request.base_url}/#{rand(36 ** 8).to_s(36)}"
   end
 
   def sanitize

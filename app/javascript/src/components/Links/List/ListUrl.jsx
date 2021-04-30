@@ -1,11 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ListUrl = ({ data, handleClicked }) => {
+const ListUrl = ({ data, handleClicked, handlePinned }) => {
   return (
     <tbody className="bg-white divide-y divide-gray-200 rounded-b">
       {data.map(rowData => (
         <tr key={rowData.id}>
+          <td>
+            <i
+              className={`ri-pushpin-2-fill align-middle cursor-pointer
+              hover:text-blue-500 ${
+        rowData.pinned ? "text-blue-900" : "text-gray-500"
+        } `}
+              onClick={() => handlePinned(rowData.id)}
+            ></i>
+          </td>
           <td
             className="px-6 py-4 text-md break-all 
             leading-5 text-bb-gray max-w-xs"

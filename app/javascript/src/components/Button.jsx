@@ -8,9 +8,9 @@ const Button = ({ type = "button", buttonText, onClick, loading }) => {
       onClick={onClick}
       className={`relative flex justify-center w-max px-4 py-2
         text-sm font-medium leading-5 text-white transition duration-150
-         ease-in-out bg-purple-600 border border-transparent rounded
-         group hover:bg-purple-500 focus:outline-none ${
-    loading ? "pointer-events-none cursor-not-allowed bg-purple-500" : ""
+         ease-in-out bg-blue-600 border border-transparent rounded
+         group hover:bg-blue-500 focus:outline-none ${
+    loading ? "pointer-events-none cursor-not-allowed bg-blue-500" : ""
     }`}
     >
       {loading ? "Loading..." : buttonText}

@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "bb-purple": "#3333f2",
+        "bb-blue": "#3333f2",
         "bb-env": "#F1F5F9",
         "bb-border": "#E4E4E7",
         "bb-gray-700": "#37415",

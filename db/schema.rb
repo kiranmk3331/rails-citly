@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_064609) do
+ActiveRecord::Schema.define(version: 2021_04_30_063351) do
 
   create_table "urls", force: :cascade do |t|
     t.string "long_url"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2021_04_29_064609) do
     t.integer "click", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "pinned", default: false
+    t.index ["long_url"], name: "index_urls_on_long_url", unique: true
+    t.index ["short_url"], name: "index_urls_on_short_url", unique: true
   end
 
 end
