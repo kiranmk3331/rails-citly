@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [urls, setUrls] = useState([]);
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
-  const [pageLoading, setPageLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -24,14 +24,6 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
-
-  if (pageLoading) {
-    return (
-      <div className="w-screen h-screen">
-        <PageLoader />
-      </div>
-    );
-  }
 
   const fetchUrls = async () => {
     try {
@@ -75,6 +67,14 @@ const Dashboard = () => {
   useEffect(() => {
     fetchUrls();
   }, []);
+
+  if (pageLoading) {
+    return (
+      <div className="w-screen h-screen">
+        <PageLoader />
+      </div>
+    );
+  }
 
   return (
     <Container>
