@@ -19,7 +19,7 @@ const Input = ({
           transition duration-150 ease-in-out rounded
           appearance-none shadow-sm border
           focus:outline-none focus:shadow-outline-blue
-          focus:border-purple-400 sm:text-sm sm:leading-5"
+          focus:border-blue-600 sm:text-sm sm:leading-5"
     />
   );
 };

@@ -9,7 +9,6 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(url_params)
     @url.short_url = generate_short_url()
-    @url.long_url = sanitize()
     if @url.save
       render status: :ok, json: {
         notice: t("successfully_created"),
@@ -55,11 +54,5 @@ class UrlsController < ApplicationController
 
   def generate_short_url
     "#{request.base_url}/#{rand(36 ** 8).to_s(36)}"
-  end
-
-  def sanitize
-    @url.long_url.strip!
-    sanitize_url = @url.long_url.downcase.gsub(/(https?:\/\/)|(www\.)/, "")
-    "http://#{sanitize_url}"
   end
 end
