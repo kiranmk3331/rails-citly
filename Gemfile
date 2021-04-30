@@ -56,5 +56,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'react-rails'
+gem "rexml"
 gem "bundler-audit", require: false
 gem "ruby_audit", require: false
