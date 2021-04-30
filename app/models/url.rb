@@ -1,7 +1,7 @@
 class Url < ApplicationRecord
   require "csv"
 
-  validates :long_url, presence: true, uniqueness: true, format: URI::regexp(%w[http https]), length: { minimum: 30 }
+  validates :long_url, presence: true, uniqueness: true, format: URI::regexp(%w[http https]), length: { minimum: 10 }
   validates :short_url,
             presence: true,
             uniqueness: true,
