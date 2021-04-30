@@ -5,7 +5,7 @@ const Container = ({ children }) => {
   return (
     <>
       <section className="px-4 py-4 mx-auto max-w-full sm:px-6 lg:px-8">
-        <div className="md:container md:mx-auto">{children}</div>
+        <div className="lg:container lg:mx-auto">{children}</div>
       </section>
     </>
   );

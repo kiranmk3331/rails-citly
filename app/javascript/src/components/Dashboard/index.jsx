@@ -45,6 +45,14 @@ const Dashboard = () => {
     }
   };
 
+  const handleReport = async () => {
+    try {
+      window.open(window.location.href + "/urls.csv");
+    } catch (error) {
+      Logger.error(error);
+    }
+  };
+
   const handleClick = async id => {
     try {
       const responds = await urlsApi.count(id);
@@ -75,6 +83,7 @@ const Dashboard = () => {
         setLink={setUrl}
         link={url}
         loading={loading}
+        handleReport={handleReport}
       />
       <ListLinks
         data={urls}

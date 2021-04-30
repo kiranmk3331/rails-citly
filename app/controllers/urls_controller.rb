@@ -3,7 +3,12 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.all
-    render status: :ok, json: { urls: @urls }
+    respond_to do |format|
+      format.html
+      format.json {render status: :ok, json: { urls: @urls }}
+      format.csv { send_data @urls.to_csv, filename: "urls-#{Date.today}.csv" }
+    end
+    
   end
 
   def create
