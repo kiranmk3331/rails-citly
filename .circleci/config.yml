@@ -8,7 +8,7 @@ jobs:
       - image: circleci/ruby:3.0.0-node-browsers
 
     #application directory change it with your application directory name
-    working_directory: ~/granite
+    working_directory: ~/rails-citly
     environment:
       TZ: "/usr/share/zoneinfo/America/New_York"
       RAILS_ENV: "test"
