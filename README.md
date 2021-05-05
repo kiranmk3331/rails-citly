@@ -1,27 +1,8 @@
-# README
+[![kiranmk3331](https://circleci.com/gh/kiranmk3331/citly.svg?style=shield)](https://app.circleci.com/pipelines/github/kiranmk3331/rails-citly)
+<br/>
 
-[![CircleCI](https://circleci.com/gh/circleci/rails-citly.svg?style=shield)](https://app.circleci.com/pipelines/github/kiranmk3331/rails-citly)
+# [Citly](https://stark-gorge-14156.herokuapp.com/)
 
+### Make your urls shortened with this app.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##### Please check the deployment here - https://stark-gorge-14156.herokuapp.com/
