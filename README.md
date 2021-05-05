@@ -1,5 +1,8 @@
 # README
 
+[![CircleCI](https://circleci.com/gh/circleci/rails-citly.svg?style=shield)](https://app.circleci.com/pipelines/github/kiranmk3331/rails-citly)
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
