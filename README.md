@@ -1,4 +1,4 @@
-[![kiranmk3331](https://circleci.com/gh/kiranmk3331/citly.svg?style=shield)](https://app.circleci.com/pipelines/github/kiranmk3331/rails-citly)
+[![kiranmk3331](https://circleci.com/gh/kiranmk3331/rails-citly.svg?style=shield)](https://app.circleci.com/pipelines/github/kiranmk3331/rails-citly)
 <br/>
 
 # [Citly](https://stark-gorge-14156.herokuapp.com/)
