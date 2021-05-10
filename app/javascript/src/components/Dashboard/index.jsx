@@ -47,7 +47,7 @@ const Dashboard = () => {
 
   const handleClick = async id => {
     try {
-      const responds = await urlsApi.count(id);
+      const responds = await urlsApi.show(id);
       window.open(responds.data.url.long_url);
       fetchUrls();
     } catch (error) {

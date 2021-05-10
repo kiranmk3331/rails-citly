@@ -1,5 +1,5 @@
 class UrlsController < ApplicationController
-  before_action :load_url, only: [:update, :count]
+  before_action :load_url, only: [:update, :show]
 
   def index
     @urls = Url.all
@@ -24,7 +24,7 @@ class UrlsController < ApplicationController
     end
   end
 
-  def count
+  def show
     @url.increment!(:click)
     if @url.save
       render status: :ok, json: { url: @url }
